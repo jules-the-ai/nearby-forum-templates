@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-theme="system"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A fast local-posts template for nearby.forum."><meta name="theme-color" content="#eef0e8">
+<title>nearby.forum — local posts</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<a class="skip" href="#posts">Skip to posts</a>
+<!-- Angular: AppHeaderComponent -->
+<header class="header" data-component="app-header"><div class="header-inner">
+  <a class="brand" href="#posts" aria-label="nearby.forum home">nearby<span>.</span>forum</a>
+  <!-- Angular: PrimaryNavComponent -->
+  <nav class="desktop-nav" aria-label="Primary" data-component="primary-nav"><a class="active" href="#posts">▦ Posts</a><a href="#saved">□ Saved</a></nav>
+  <div class="header-actions"><button type="button" class="theme" data-theme-toggle><i data-theme-icon>◐</i><span data-theme-label>System</span></button><button class="avatar" type="button" aria-label="Profile">EH</button></div>
+</div></header>
+<main class="layout">
+  <!-- Angular: AreaStatusComponent -->
+  <aside class="sidebar left" data-component="area-status"><p class="eyebrow">LOCAL RESULTS</p><h1 data-area-name>Location required</h1><p data-area-copy>Posts appear only after you enable location services or enter a ZIP code.</p><button type="button" class="location-button" data-open-location>⌖ Set location</button><hr><p class="eyebrow">HOW IT WORKS</p><ol><li>Set your local area.</li><li>Browse nearby posts.</li><li>Change it anytime.</li></ol></aside>
+  <!-- Angular: PostListPageComponent -->
+  <section id="posts" class="posts" data-component="post-list-page">
+    <div class="heading"><div><p class="eyebrow">LOCAL LISTINGS <span data-area-label>— LOCATION REQUIRED</span></p><h2>Posts nearby</h2></div><p data-result-count>—</p></div>
+    <!-- Angular: PostFiltersComponent -->
+    <form class="filters" data-component="post-filters" data-filters><div class="search"><label class="sr-only" for="keyword">Search posts</label><span>⌕</span><input id="keyword" name="keyword" type="search" placeholder="Search nearby posts" disabled></div><label class="select"><span class="sr-only">Category</span><select name="category" disabled><option value="all">All categories</option><option value="question">Questions</option><option value="offer">Offers</option><option value="recommendation">Recommendations</option><option value="event">Events</option></select></label><button type="reset" disabled>Clear</button></form>
+    <p class="status" role="status" data-status>Set your location to see posts in your area.</p>
+    <!-- Angular: PostCardComponent; render this from Post[] -->
+    <div class="cards obscured" data-post-cards aria-live="polite">
+      <article class="post" data-component="post-card" data-category="question" data-search="pharmacy euclid open late prescription"><div class="meta"><b class="initial">MB</b><span><strong>Maya B.</strong> <em>· 8 min</em></span><mark>QUESTION</mark></div><h3>Is the pharmacy on Euclid open late tonight?</h3><p>Need to pick up a prescription after work. Their website is showing two different closing times.</p><footer><span>0.4 mi away</span><div><button type="button">△ 3</button><button type="button">Reply 2</button></div></footer></article>
+      <article class="post" data-component="post-card" data-category="offer" data-search="free moving boxes pickup maryland kingshighway"><div class="meta"><b class="initial green">JD</b><span><strong>Jordan D.</strong> <em>· 26 min</em></span><mark>OFFER</mark></div><h3>Free moving boxes — pickup today</h3><p>About 25 clean medium boxes, flattened. Near Maryland and Kingshighway. Message if you can use them.</p><footer><span>0.8 mi away</span><div><button type="button">△ 11</button><button type="button">Reply 5</button></div></footer></article>
+      <article class="post" data-component="post-card" data-category="recommendation" data-search="quiet place work morning coffee outlets music"><div class="meta"><b class="initial blue">SK</b><span><strong>Sam K.</strong> <em>· 1 hr</em></span><mark>RECOMMENDATION</mark></div><h3>Quiet place to work tomorrow morning?</h3><p>Looking for coffee, outlets, and a place that is not playing music over the conversations.</p><footer><span>1.2 mi away</span><div><button type="button">△ 7</button><button type="button">Reply 8</button></div></footer></article>
+      <article class="post" data-component="post-card" data-category="event" data-search="community garden workday saturday tools"><div class="meta"><b class="initial rust">AL</b><span><strong>Ari L.</strong> <em>· 2 hr</em></span><mark>EVENT</mark></div><h3>Community garden workday, Saturday</h3><p>Starting at 9:00. Tools supplied; bring gloves if you have them. All experience levels welcome.</p><footer><span>1.5 mi away</span><div><button type="button">△ 14</button><button type="button">Reply 4</button></div></footer></article>
+    </div><p class="empty" hidden data-empty>No posts match those filters. Try another category or keyword.</p>
+  </section>
+  <!-- Angular: AreaNoticeComponent -->
+  <aside class="sidebar right" data-component="area-notice"><p class="eyebrow">LOCATION PRIVACY</p><section><h2>Your exact location is not shown.</h2><p>Listings are limited to the area you choose. A ZIP code establishes an approximate local area.</p></section><p class="eyebrow bottom-label">NEARBY.FORUM</p><p>Useful local conversation. No follower counts. No ranked feed.</p></aside>
+</main>
+<!-- Angular: LocationGateComponent -->
+<dialog data-location-gate aria-labelledby="location-title"><form method="dialog" data-location-form><button class="close" type="button" data-close-location aria-label="Close">×</button><p class="eyebrow">LOCATION REQUIRED</p><h2 id="location-title">Set your local area.</h2><p>To view posts, enable location services or enter a U.S. ZIP code. Listings never appear without one.</p><button class="button solid" type="button" data-use-location>Enable location services</button><div class="or">OR</div><label for="zip">ZIP code</label><div class="zip-row"><input id="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="63108" required><button class="button" type="submit">Continue</button></div><p class="error" data-location-error aria-live="polite"></p></form></dialog>
+<!-- Angular: MobileNavComponent -->
+<nav class="mobile-nav" aria-label="Mobile" data-component="mobile-nav"><a class="active" href="#posts">▦<span>Posts</span></a><button type="button" data-open-location>⌖<span>Area</span></button><a href="#saved">□<span>Saved</span></a><button type="button" data-theme-toggle><i data-theme-icon>◐</i><span data-theme-label>System</span></button></nav>
+<script src="app.js"></script></body></html>
