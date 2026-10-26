@@ -1,6 +1,6 @@
 # nearby.forum templates
 
-A very lean static HTML template for the first nearby.forum screen: the local posts list.
+A lean, Bauhaus/Functionalist static HTML template for the first nearby.forum screen: the local posts list.
 
 ## Implemented rules
 
@@ -9,7 +9,7 @@ A very lean static HTML template for the first nearby.forum screen: the local po
 - After an area is selected, category and keyword filtering work against the list.
 - Theme defaults to the device setting; the switch cycles System, Light, and Dark and persists locally.
 - Desktop navigation is sticky at the top. Mobile uses a fixed pseudo-native bottom navigation bar.
-- No external fonts, images, packages, trackers, or build tool are required.
+- The visual system uses hard geometry, a restricted functional primary palette, and no external fonts, images, packages, trackers, or build tool.
 
 ## Angular extraction map
 
